@@ -6,6 +6,7 @@ const cancel = document.querySelectorAll("#cancel")
 
 editBTN.forEach(element => {
     element.addEventListener("click", () => {
+        window.scrollTo(pageYOffset, 0);
         body.classList.add ("body_block")
         editMODAL.classList.remove ("hide")
     })

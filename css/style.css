@@ -7,6 +7,10 @@
     font-family: 'Caveat', cursive;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .block-scroll {
     overflow: hidden;
 }

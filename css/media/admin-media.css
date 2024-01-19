@@ -1,3 +1,9 @@
+@media screen and (max-width: 1400px) {
+    .accounts {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 @media screen and (max-width: 1190px) {
     body{
         margin: auto;
@@ -33,6 +39,7 @@
         font-size: 21px;
         flex-wrap: wrap;
         flex-direction: column;
+        max-height: none;
     }
 
     .form_edit_account form{
