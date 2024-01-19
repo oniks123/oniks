@@ -1,11 +1,13 @@
 <?
-   session_start();
+    session_start();
+    require ("../core/bd.php");
 
-    $user_progile = mysqli_fetch_assoc( mysqli_query($bd, "SELECT * FROM `users` WHERE `id` = $_SESSION[uid]"));
+    $check_role = mysqli_fetch_assoc ( mysqli_query($bd, "SELECT * FROM `users` WHERE `id` = $_SESSION[uid]"));
 
-    if ($user_progile["role"] != "admin") {
-        header("location: ../index.php?error=404");
-    };
+    if ($check_role["role"] != "admin") {
+        echo "<script>location.href='../404.php';</script>"; 
+    }
+    else {};
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +19,6 @@
     <link rel="stylesheet" href="../css/add-menu.css">
 </head>
 <body>
-
-    <? require ("../core/bd.php"); ?>
 
     <main>
 

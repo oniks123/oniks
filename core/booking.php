@@ -1,5 +1,3 @@
-<pre>
-
    <?php
 
       require ("bd.php");  
@@ -13,15 +11,11 @@
       $comments = $_POST["comments"];
       $name = $_POST["name"];
 
-      var_dump ($time);
-
       $booking = mysqli_query($bd, "INSERT INTO `bookings` (`id`, `data`, `person`, `time`, `comments`, `name`, `owner`, `Status`, `Reason`) 
       VALUES (NULL, '$data', '$people', '$time', '$comments', '$name', '$user_id', 'Одобрено', '')");
 
       if (!empty($booking)) {
-         // header("location: ../index.php");
+         echo "<script>location.href='../index.php';</script>"; 
       }
-         // header("location: ../index.php?error-booking");
+         echo "<script>location.href='../index?error-booking.php';</script>"; 
    ?>
-
-</pre>

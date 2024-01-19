@@ -1,7 +1,7 @@
 <? 
 
     session_start();
-    require "../core/bd.php";
+    require ("../core/bd.php");
 
     $check_role = mysqli_fetch_assoc ( mysqli_query($bd, "SELECT * FROM `users` WHERE `id` = $_SESSION[uid]"));
 
@@ -25,14 +25,15 @@
         WHERE `menu`.`id` = '$product_id'"));
 
         if ($update) {
-            header("location: ../menu/".$_POST["type"] .".php");
+            echo "<script>location.href='../menu/$_POST[type].php';</script>";
         }
         else {
-            header("location: ../menu.php?error=update");
+            echo "<script>location.href='../menu.php?error=update';</script>";
         }
 
     } elseif ($new_img["type"] != "image/png" && $new_img["type"] != "image/jpeg" && $new_img["type"] != "image/jpg"){
-        header("location: ../menu.php?error=typeimg");
+        echo "<script>location.href='../menu.php?error=typeimg';</script>";
+
     }
     else {
         $tmpName = $new_img["tmp_name"];
@@ -50,11 +51,11 @@
         WHERE `menu`.`id` = '$product_id'");
 
         if ($update) {
-            header("location: ../menu/".$_POST["type"] .".php");
+            echo "<script>location.href='../menu/$_POST[type].php';</script>";
         }
 
         else {
-            header("location: ../menu/edit-menu.php?error=update");
+            echo "<script>location.href='../menu/edit-menu.php?error=update';</script>";
         } 
 
     }

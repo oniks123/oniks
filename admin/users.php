@@ -6,8 +6,6 @@
     $check_role = mysqli_fetch_assoc ( mysqli_query($bd, "SELECT * FROM `users` WHERE `id` = $_SESSION[uid]"));
 
     if ($check_role["role"] != "admin") {
-        // header("location: ../404.php");
-
         echo "<script>location.href='../404.php';</script>"; 
     }
     else {};
@@ -346,7 +344,7 @@
     <pre>
         <?php 
         
-            var_dump ($check_role);
+            // var_dump ($check_role);
         
         ?>
     </pre>

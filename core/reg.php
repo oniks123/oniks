@@ -13,9 +13,11 @@
       $reg_user = mysqli_query($bd,"INSERT INTO `users` (`id`, `name`, `login`, `pass`, `number`, `email`, `role`) VALUES (NULL, '$tmp_username', '$tmp_login', '$tmp_pass', '$tmp_number', '$tmp_mail', 'user')");
       
       if (!$reg_user) {
-         header("location: ../autoriz.php?error=reg");
+         echo "<script>location.href='../autoriz.php?error=reg';</script>"; 
+
       }
-         header("location: ../index.php");
+         echo "<script>location.href='../index.php';</script>"; 
+
    ?>
 
 </pre>

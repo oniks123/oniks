@@ -14,10 +14,12 @@
 
          $_SESSION["uid"] = $check["id"];
 
-         header("location: ../index.php");
+         echo "<script>location.href='../index.php';</script>"; 
+         
       }
       else
-        header("location: ../autoriz.php?error=login");
+        echo "<script>location.href='../autoriz.php?error=login';</script>"; 
+
    ?>
 
 </pre>

@@ -3,5 +3,6 @@
 
    session_unset();
 
-   header("location: ../index.php");   
+   echo "<script>location.href='../index.php';</script>"; 
+  
 ?>

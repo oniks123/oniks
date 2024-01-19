@@ -6,14 +6,14 @@
     $other_text = $_POST["other-text"];
 
     if ($reson_claim == "") {
-        header ("location: ../about.php?error=claim");
+        echo "<script>location.href='../about.php?error=claim';</script>"; 
     }
     else {
         $claim = mysqli_query($bd, "INSERT INTO `claim-feedback` (`id`, `IDpost`, `reson`, `description`) VALUES (NULL, '$id_post', '$reson_claim', '$other_text')");
 
         if (!$claim) {
-            header ("location: ../about.php?error=claim");
+            echo "<script>location.href='../about.php?error=claim';</script>"; 
         }
-            header ("location: ../about.php");
+            echo "<script>location.href='../about.php';</script>"; 
     }
 ?>
