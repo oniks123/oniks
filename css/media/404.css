@@ -1,0 +1,19 @@
+@media screen and (max-width: 768px) {
+    .error-code {
+      font-size: 80px;
+    }
+  
+    .error-message {
+      font-size: 18px;
+    }
+}
+  
+@media screen and (max-width: 480px) {
+    .error-code {
+      font-size: 60px;
+    }
+  
+    .error-message {
+      font-size: 16px;
+    }
+}

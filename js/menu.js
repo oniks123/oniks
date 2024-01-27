@@ -9,6 +9,7 @@ MenuClose.addEventListener('click', () => {
 })
 
 open.addEventListener('click', () => {
+    window.scrollTo(pageYOffset, 0);
     body.classList.add("block-scroll")
     MenuConteiner.classList.remove("hide-menu")
 })

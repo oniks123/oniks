@@ -1,27 +1,21 @@
-<pre>
+<? 
+   require ("bd.php");
 
-   <? 
-      require ("bd.php");
+   $tmp_login = $_POST["login"];
+   $tmp_pass =  md5($_POST["password"]);
 
-      $tmp_login = $_POST["login"];
-      $tmp_pass =  md5($_POST["password"]);
+   $check = mysqli_fetch_assoc( mysqli_query($bd,"SELECT * FROM `users` WHERE `login` LIKE '$tmp_login' AND `pass` LIKE '$tmp_pass'"));
 
-      $check = mysqli_fetch_assoc( mysqli_query($bd,"SELECT * FROM `users` WHERE `login` LIKE '$tmp_login' AND `pass` LIKE '$tmp_pass'"));
+   if (!empty($check)){
 
-      if (!empty($check)){
+      session_start();
 
-         session_start();
+      $_SESSION["uid"] = $check["id"];
 
-         $_SESSION["uid"] = $check["id"];
+      echo "<script>location.href='../index.php';</script>"; 
+      
+   }
+   else
+      echo "<script>location.href='../auth/login.php?error=login';</script>"; 
 
-         echo "<script>location.href='../index.php';</script>"; 
-         
-      }
-      else
-        echo "<script>location.href='../autoriz.php?error=login';</script>"; 
-
-   ?>
-
-</pre>
-
-
+?>

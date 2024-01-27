@@ -168,7 +168,7 @@
                         
                         else {
                             ?>
-                                <h2 class="login-pls">Для бронирования столика нужно <a href="autoriz.php">авторизироваться</a> </h2>
+                                <h2 class="login-pls">Для бронирования столика нужно <a href="auth/login.php">авторизироваться</a> </h2>
                             <?
                         }
 
@@ -333,7 +333,6 @@
         if ($_SESSION) {
             ?>
                 <script src="./js/booking.js"></script>
-                <script src="./js/people.js"></script>
             <?
         }
         else{

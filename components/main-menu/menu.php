@@ -25,7 +25,7 @@
             else {
                 ?> 
                     <div class="autoriz">
-                        <a href="autoriz.php">Вход</a>
+                        <a href="./auth/login.php">Вход</a>
                     </div>
                 <?
             }

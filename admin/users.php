@@ -10,9 +10,10 @@
     }
     else {};
 
-    $users = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'user'"));
-    $editors = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'editor'"));
-    $admins = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'admin'"));
+    $users = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'user' AND `ban` = 0"));
+    $editors = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'editor' AND `ban` = 0"));
+    $admins = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'admin' AND `ban` = 0"));
+    $bans = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `ban` = 1"));
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +22,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Клиентская база</title>
-    <link rel="stylesheet" href="../css/admin.css">
-    <link rel="stylesheet" href="../css/media/admin-media.css">
+    <link rel="stylesheet" href="../css/admins/users.css">
+    <link rel="stylesheet" href="../css/media/admins-media/users-media.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../js/modals_processing.js"></script>
     <script src="../js/search.js"></script>
@@ -55,6 +56,11 @@
                 <p class="block_subtitle"><?=count($editors);?></p>
             </div>
 
+            <div class="block" id="bans">
+                <p class="block_title">Заблокированно</p>
+                <p class="block_subtitle"><?=count($bans);?></p>
+            </div>
+
         </section>
 
         <section class="search">
@@ -64,7 +70,6 @@
         </section>
 
         <section class="accounts">
-
 
             <?php 
             
@@ -92,7 +97,6 @@
                                             <p><?=$admin["2"];?></p>
                                             <input type="hidden" name="login" value="<?=$admin["2"];?>">
                                         </div>
-
             
                                         <div class="role">
                                             <p>Администратор</p>
@@ -295,26 +299,26 @@
 
                     <div class="body_form_edit">
 
-                        <input type="hidden" id="user_id_modal" name="user_id" >
+                        <input type="hidden" id="user_id_modal" name="user_id">
 
                         <div class="login">
                             <p>Логин</p>
-                            <input type="text" id="login_modal" name="login" autocomplete="off">
+                            <input type="text" id="login_modal" name="login" autocomplete="off" required>
                         </div>
 
                         <div class="named">
                             <p>Имя</p>
-                            <input type="text" id="name_modal" name="name" autocomplete="off">
+                            <input type="text" id="name_modal" name="name" autocomplete="off" required>
                         </div>
 
                         <div class="number">
                             <p>Номер телефона</p>
-                            <input type="text" id="number_modal" name="number" autocomplete="off">
+                            <input type="text" id="number_modal" name="number" autocomplete="off" required>
                         </div>
 
                         <div class="email">
                             <p>E-mail</p>
-                            <input type="text" id="email_modal" name="email" autocomplete="off">
+                            <input type="text" id="email_modal" name="email" autocomplete="off" required>
                         </div>
 
                         <div class="role">
@@ -324,6 +328,35 @@
                                 <option value="editor">Редактор</option>
                                 <option value="user">Пользователь</option>
                             </select>
+                        </div>
+
+                    </div>
+
+                    <div class="footer_form_edit">
+                        <div class="button_form_edit">
+                            <p id="cancel">Отмена</p>
+                            <button type="submit" id="save">Сохранить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="modal_ban_account hide">
+            <div class="form_edit_account">
+                <form action="../core/form_ban_account.php" method="post">
+                    <div class="top_form_edit">
+                        <p>Блокировка профиля</p>
+                        <p id="cancel">X</p>
+                    </div>
+
+                    <div class="body_form_edit">
+
+                        <input type="hidden" id="user_id_modal_ban" name="user_id">
+
+                        <div class="reson">
+                            <p>Причина блокировки</p>
+                            <input type="text" name="reson_ban" id="reson_ban" required>
                         </div>
 
                     </div>
