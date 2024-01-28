@@ -99,7 +99,12 @@
                                                 <input type="hidden" name="name" value="<?=$admin["1"];?>">
                                             </div>
 
-                                            <div class="login">
+                                            <div class="role">
+                                                <p>Администратор</p>
+                                                <input type="hidden" name="role" value="<?=$admin["6"];?>">
+                                            </div>
+
+                                            <div class="reson">
                                                 <p><?=$admin["8"];?></p>
                                                 <input type="hidden" name="login" value="<?=$admin["8"];?>">
                                             </div>
@@ -120,9 +125,9 @@
                                             <img src="../img/admin/unban_account.svg" alt="">                                                                
                                         </button>
                 
-                                        <button class="history_account" type="submit">
-                                            <img src="../img/admin/history_account.svg" alt="">                                                                
-                                        </button>
+                                        <div class="dell_account">
+                                            <img src="../img/admin/dell_account.svg" alt="">                                                                
+                                        </div>
                 
                                     </div>
                 
@@ -154,11 +159,16 @@
                                                 <input type="hidden" name="name" value="<?=$editor["1"];?>">
                                             </div>
 
-                                            <div class="login">
+                                            <div class="role">
+                                                <p>Редактор</p>
+                                                <input type="hidden" name="role" value="<?=$editro["6"];?>">
+                                            </div>
+
+                                            <div class="reson">
                                                 <p><?=$editor["8"];?></p>
                                                 <input type="hidden" name="login" value="<?=$editor["8"];?>">
-                                            </div>          
-        
+                                            </div>
+                                                    
                                             <input type="hidden" name="user_id" value = "<?=$editor["0"];?>">
                 
                                         </div>
@@ -175,9 +185,9 @@
                                             <img src="../img/admin/unban_account.svg" alt="">                                                                
                                         </button>
                 
-                                        <button class="history_account" type="submit">
-                                            <img src="../img/admin/history_account.svg" alt="">                                                                
-                                        </button>
+                                        <div class="dell_account">
+                                            <img src="../img/admin/dell_account.svg" alt="">                                                                
+                                        </div>
                 
                                     </div>
                 
@@ -210,7 +220,12 @@
                                                 <input type="hidden" name="name" value="<?=$user["1"];?>">
                                             </div>
 
-                                            <div class="login">
+                                            <div class="role">
+                                                <p>Пользователь</p>
+                                                <input type="hidden" name="role" value="<?=$user["6"];?>">
+                                            </div>
+
+                                            <div class="reson">
                                                 <p><?=$user["8"];?></p>
                                                 <input type="hidden" name="login" value="<?=$user["8"];?>">
                                             </div>
@@ -231,15 +246,14 @@
                                             <img src="../img/admin/unban_account.svg" alt="">                                                                
                                         </button>
                 
-                                        <button class="history_account" type="submit">
-                                            <img src="../img/admin/history_account.svg" alt="">                                                                
-                                        </button>
-                
+                                        <div class="dell_account">
+                                            <img src="../img/admin/dell_account.svg" alt="">                                                                
+                                        </div>
+
                                     </div>
                 
                                 </div>
                             </form>
-
             
                         </div>
                         <?
@@ -272,7 +286,36 @@
                     <div class="footer_form_edit">
                         <div class="button_form_edit">
                             <p id="cancel">Отмена</p>
-                            <button type="submit" id="save">Сохранить</button>
+                            <button type="submit" id="save">Разблокировать</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="modal_dell_account hide">
+            <div class="form_edit_account">
+                <form action="../core/form_unban_account.php" method="post">
+                    <div class="top_form_edit">
+                        <p>Удаление аккаунта</p>
+                        <p id="cancel">X</p>
+                    </div>
+
+                    <div class="body_form_edit">
+
+                        <input type="hidden" id="user_id_modal_ban" name="user_id">
+
+                        <div class="reson">
+                            <p>Удаление аккаунта</p>
+                            <input type="text" name="reson_ban" autocomplete="off" required placeholder = "Введите причину удаления">
+                        </div>
+
+                    </div>
+
+                    <div class="footer_form_edit">
+                        <div class="button_form_edit">
+                            <p id="cancel">Отмена</p>
+                            <button type="submit" id="save">Удалить</button>
                         </div>
                     </div>
                 </form>
@@ -281,16 +324,6 @@
 
     </main>
 
-    <footer> 
-    <pre>
-        <?php 
-        
-            // var_dump ($check_role);
-        
-        ?>
-    </pre>
-    </footer>
-
-    <script src= "../js/modals.js"></script>
+    <script src= "../js/modals_bans.js"></script>
 </body>
 </html>

@@ -159,7 +159,7 @@ header a:hover{
     align-items: center;
 }
 
-.button_account button{
+.button_account button, .button_account div{
     margin: 0 20px;
     cursor: pointer;
     border: none;
@@ -178,7 +178,7 @@ header a:hover{
     visibility: hidden;
 }
 
-.modal_unban_account {
+.modal_unban_account, .modal_dell_account{
     position: absolute;
     z-index: 1001;
     top: 50%;

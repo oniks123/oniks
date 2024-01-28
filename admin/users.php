@@ -364,7 +364,7 @@
                     <div class="footer_form_edit">
                         <div class="button_form_edit">
                             <p id="cancel">Отмена</p>
-                            <button type="submit" id="save">Сохранить</button>
+                            <button type="submit" id="save">Заблокировать</button>
                         </div>
                     </div>
                 </form>
@@ -373,16 +373,6 @@
 
     </main>
 
-    <footer> 
-    <pre>
-        <?php 
-        
-            // var_dump ($check_role);
-        
-        ?>
-    </pre>
-    </footer>
-
-    <script src= "../js/modals.js"></script>
+    <script src= "../js/modals_users.js"></script>
 </body>
 </html>

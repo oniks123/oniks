@@ -178,7 +178,7 @@ header a:hover{
     visibility: hidden;
 }
 
-.modal_edit_account, .modal_ban_account {
+.modal_edit_account, .modal_ban_account{
     position: absolute;
     z-index: 1001;
     top: 50%;
