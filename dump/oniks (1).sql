@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 192.168.1.2:3306
--- Время создания: Янв 12 2024 г., 21:53
+-- Время создания: Янв 30 2024 г., 11:03
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.4.30
 
@@ -32,11 +32,11 @@ CREATE TABLE `bookings` (
   `data` date NOT NULL,
   `person` int NOT NULL,
   `time` time NOT NULL,
-  `comments` text COLLATE utf8mb4_general_ci NOT NULL,
-  `name` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `comments` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `owner` int NOT NULL,
   `Status` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'Одобрено',
-  `Reason` varchar(256) COLLATE utf8mb4_general_ci NOT NULL
+  `Reason` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -47,7 +47,10 @@ INSERT INTO `bookings` (`id`, `data`, `person`, `time`, `comments`, `name`, `own
 (2, '2023-09-24', 6, '13:00:00', 'Пицца', 'Kirill Oniks', 1, 'Одобрено', ''),
 (32, '2023-09-24', 6, '13:00:00', 'Пицца', 'Kirill Oniks', 1, 'Отменено', 'Потому что потому'),
 (35, '2023-10-14', 4, '15:00:00', 'Хочу пиццу', 'Kirill', 1, 'Одобрено', ''),
-(36, '2023-10-26', 5, '15:00:00', 'Хочу пиццу', 'Кирилл', 1, 'Отменено', '');
+(36, '2023-10-26', 5, '15:00:00', 'Хочу пиццу', 'Кирилл', 1, 'Отменено', ''),
+(37, '2024-01-27', 4, '12:00:00', 'gsdfgsdfg', 'Admin', 1, 'Одобрено', ''),
+(38, '2024-01-26', 4, '12:00:00', 'gsdfg', 'Admin', 1, 'Одобрено', ''),
+(39, '2024-01-26', 4, '12:00:00', 'gsdfg', 'Admin', 1, 'Одобрено', '');
 
 -- --------------------------------------------------------
 
@@ -58,8 +61,8 @@ INSERT INTO `bookings` (`id`, `data`, `person`, `time`, `comments`, `name`, `own
 CREATE TABLE `claim-feedback` (
   `id` int NOT NULL,
   `IDpost` int NOT NULL,
-  `reson` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
-  `description` text COLLATE utf8mb4_general_ci NOT NULL
+  `reson` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -68,7 +71,9 @@ CREATE TABLE `claim-feedback` (
 
 INSERT INTO `claim-feedback` (`id`, `IDpost`, `reson`, `description`) VALUES
 (1, 1, 'spam', ''),
-(13, 4, 'noinfo', '');
+(13, 4, 'noinfo', ''),
+(14, 1, 'spam', ''),
+(15, 1, 'other', 'еуые');
 
 -- --------------------------------------------------------
 
@@ -106,9 +111,9 @@ INSERT INTO `feedback` (`id`, `user`, `data`, `general`, `eat`, `service`, `atmo
 CREATE TABLE `menu` (
   `id` int NOT NULL,
   `Composition` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `img` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `img` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `price` int NOT NULL,
-  `type` varchar(256) COLLATE utf8mb4_general_ci NOT NULL
+  `type` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -116,7 +121,7 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `Composition`, `img`, `price`, `type`) VALUES
-(1, 'Потом', '16951523171.png', 111, 'breakfast'),
+(1, 'Потом', '16951523171.png', 1111, 'breakfast'),
 (2, 'Потом', '16951523252.jpg', 11, 'breakfast'),
 (3, 'Потом', '16951523313.png', 111, 'breakfast'),
 (4, 'Потом', '16951523384.jpg', 111, 'breakfast'),
@@ -127,7 +132,7 @@ INSERT INTO `menu` (`id`, `Composition`, `img`, `price`, `type`) VALUES
 (10, '111', '16951523919.jpg', 111, 'breakfast'),
 (11, '111', '169515239710.jpeg', 111, 'breakfast'),
 (12, '111', '169515240311.jpg', 111, 'breakfast'),
-(14, '111', '16951525391.jpeg', 111, 'Snacks'),
+(14, 'Потом', '16951525391.jpeg', 111, 'Snacks'),
 (15, '111', '16951525592.jpg', 111, 'Snacks'),
 (16, '111', '16951525673.jpg', 111, 'Snacks'),
 (17, '111', '16951525764.jpg', 111, 'Snacks'),
@@ -169,28 +174,33 @@ INSERT INTO `menu` (`id`, `Composition`, `img`, `price`, `type`) VALUES
 
 CREATE TABLE `users` (
   `id` int NOT NULL,
-  `name` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
-  `login` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
-  `pass` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
+  `name` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `login` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pass` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `number` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `role` varchar(40) COLLATE utf8mb4_general_ci NOT NULL
+  `role` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `ban` int NOT NULL,
+  `reson` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `login`, `pass`, `number`, `email`, `role`) VALUES
-(1, 'Kirill Oniks', 'oniks', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-98', 'oniks@mail.ru', 'admin'),
-(2, 'Kirill Alexandrovich', '15_ONIKS_49', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-97', 'on1ks@mail.ru', 'admin'),
-(3, 'Admin User', 'Userov', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-96', '15_oniks_49@mail.ru', 'admin'),
-(4, 'Admin Adminov', 'Adminov', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-95', '15_on1ks_49@mail.ru', 'admin'),
-(5, 'Dima', 'programator', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-94', 'programator@mail.ru', 'editor'),
-(6, 'Danil', 'unstoppable666', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-93', 'unstoppable666@mail.ru', 'user'),
-(7, 'Alina', 'CHOOO', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-92', 'CHOOO@mail.ru', 'user'),
-(8, 'Slava', 'Kuzmin', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-91', 's.kuzmin@mail.ru', 'user'),
-(10, 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '899999999999', 'test@test.ru', 'user');
+INSERT INTO `users` (`id`, `name`, `login`, `pass`, `number`, `email`, `role`, `ban`, `reson`) VALUES
+(1, 'Kirill Oniks', 'oniks', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-99', 'oniks@mail.ru', 'admin', 0, ''),
+(2, 'Kirill Alexandrovich', '15_ONIKS_49', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-97', 'on1ks@mail.ru', 'admin', 0, ''),
+(3, 'Admin User', 'Userov', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-96', '15_oniks_49@mail.ru', 'admin', 0, ''),
+(4, 'Admin Adminov', 'Adminov', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-95', '15_on1ks_49@mail.ru', 'admin', 0, ''),
+(5, 'Dima', 'programator', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-94', 'programator@mail.ru', 'editor', 0, ''),
+(6, 'Danil', 'unstoppable666', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-93', 'unstoppable666@mail.ru', 'user', 0, ''),
+(7, 'Alina', 'CHOOO', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-92', 'CHOOO@mail.ru', 'user', 0, ''),
+(8, 'Slava', 'Kuzmin', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-91', 's.kuzmin@mail.ru', 'user', 0, ''),
+(10, 'Pochta', 'onikss', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-90', 'test@test.ru', 'admin', 0, ''),
+(22, 'test', 'test', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-89', 'test@ftest.ru', 'admin', 0, 'ь'),
+(23, 'testt', 'testt', '147538da338b770b61e592afc92b1ee6', '+7 (999) 999-99-88', 'programator@mail.ru', 'user', 1, 'дима'),
+(24, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', '+7 (999) 999-99-89', 'test@ftest.ru', 'admin', 0, '');
 
 --
 -- Индексы сохранённых таблиц
@@ -227,7 +237,7 @@ ALTER TABLE `menu`
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id`,`reson`) USING BTREE,
   ADD KEY `name` (`name`);
 
 --
@@ -238,13 +248,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT для таблицы `claim-feedback`
 --
 ALTER TABLE `claim-feedback`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблицы `feedback`
@@ -256,13 +266,13 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT для таблицы `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
