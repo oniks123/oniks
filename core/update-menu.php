@@ -25,7 +25,7 @@
         WHERE `menu`.`id` = '$product_id'"));
 
         if ($update) {
-            echo "<script>location.href='../menu/$_POST[type].php';</script>";
+            echo "<script>location.href='../menu/menu.php?category=$_POST[type]';</script>";
         }
         else {
             echo "<script>location.href='../menu.php?error=update';</script>";
@@ -51,7 +51,7 @@
         WHERE `menu`.`id` = '$product_id'");
 
         if ($update) {
-            echo "<script>location.href='../menu/$_POST[type].php';</script>";
+            echo "<script>location.href='../menu/menu.php?category=$_POST[type]';</script>";
         }
 
         else {

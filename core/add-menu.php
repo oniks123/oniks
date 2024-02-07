@@ -25,7 +25,7 @@
         (`id`, `Composition`, `img`, `price`, `type`) VALUES 
         (NULL, '$add_Composition', '$nameimg', '$add_price', '$add_type')");
 
-        echo "<script>location.href='../menu/$_POST[type].php';</script>"; 
+        echo "<script>location.href='../menu/menu.php?category=$add_type';</script>"; 
     }
 
 ?>

@@ -10,6 +10,7 @@ $(document).ready(function () {
                 $('#email_modal').val(data.email);
                 $('#user_id_modal').val(data.user_id);
                 $('#user_id_modal_ban').val(data.user_id);
+                $('#user_id_modal_dell').val(data.user_id);
             }, 'JSON');  
         })
     });          

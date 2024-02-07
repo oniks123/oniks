@@ -41,16 +41,24 @@
 
             <select name="type" id="" require> 
                 <option value="breakfast">Завтрак</option>
-                <option value="Snacks">Закуски</option>
-                <option value="Salads">Салаты</option>
-                <option value="Soups">Супы</option>
-                <option value="Hotter">Горячее</option>
-                <option value="Pizza">Пицца</option>
-                <option value="Side-dishes">Гарниры</option>
-                <option value="Asia">Азия</option>
-                <option value="Desserts">Десерты</option>
-                <option value="Drinks">Напитки</option>
+                <option value="snacks">Закуски</option>
+                <option value="salads">Салаты</option>
+                <option value="soups">Супы</option>
+                <option value="hotter">Горячее</option>
+                <option value="pizza">Пицца</option>
+                <option value="side_dishes">Гарниры</option>
+                <option value="asia">Азия</option>
+                <option value="desserts">Десерты</option>
+                <option value="drinks">Напитки</option>
             </select>
+
+            <?php 
+            
+                if (!empty($_GET["error"])) {
+                    echo "<p>Ошибка при добавлении товара</p>";
+                }
+
+            ?>
 
             <button type="submit">Добавить в меню</button>
 

@@ -10,10 +10,10 @@
     }
     else {};
 
-    $users = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'user' AND `ban` = 1"));
-    $editors = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'editor' AND `ban` = 1"));
-    $admins = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'admin' AND `ban` = 1"));
-    $bans = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `ban` = 1"));
+    $users = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `dell_users` WHERE `role` LIKE 'user' AND `ban` = 1"));
+    $editors = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `dell_users` WHERE `role` LIKE 'editor' AND `ban` = 1"));
+    $admins = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `dell_users` WHERE `role` LIKE 'admin' AND `ban` = 1"));
+    $dells = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `dell_users`"));
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +21,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блокировки</title>
-    <link rel="stylesheet" href="../css/admins/bans.css">
-    <link rel="stylesheet" href="../css/media/admins-media/bans-media.css">
+    <title>Удаленные пользователи</title>
+    <link rel="stylesheet" href="../css/admins/dells.css">
+    <link rel="stylesheet" href="../css/media/admins-media/dells-media.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../js/modals_processing.js"></script>
     <script src="../js/search.js"></script>
@@ -57,8 +57,8 @@
             </div>
 
             <div class="block" id="bans">
-                <p class="block_title">Заблокированно</p>
-                <p class="block_subtitle"><?=count($bans);?></p>
+                <p class="block_title">Удалено</p>
+                <p class="block_subtitle"><?=count($dells);?></p>
             </div>
 
         </section>
@@ -75,7 +75,7 @@
 
             <?php 
 
-                if (count($bans) == 0) {
+                if (count($dells) == 0) {
                     echo ("<p>Отсутствуют заблокированные пользователи</p>");
                 }else {
             
@@ -116,22 +116,7 @@
                                     </div>
                 
                                 </div>
-                
-                                <div class="bottom_block_account">
-                
-                                    <div class="button_account">
-                
-                                        <button class="unban_account" type="submit">
-                                            <img src="../img/admin/unban_account.svg" alt="">                                                                
-                                        </button>
-                
-                                        <button class="dell_account" type="submit">
-                                            <img src="../img/admin/dell_account.svg" alt="">                                                                
-                                        </button>
-                
-                                    </div>
-                
-                                </div>
+            
                             </form>
             
                         </div>
@@ -172,22 +157,6 @@
                                             <input type="hidden" name="user_id" value = "<?=$editor["0"];?>">
                 
                                         </div>
-                
-                                    </div>
-                
-                                </div>
-                
-                                <div class="bottom_block_account">
-                
-                                    <div class="button_account">
-                
-                                        <button class="unban_account" type="submit">
-                                            <img src="../img/admin/unban_account.svg" alt="">                                                                
-                                        </button>
-                
-                                        <button class="dell_account" type="submit">
-                                            <img src="../img/admin/dell_account.svg" alt="">                                                                
-                                        </button>
                 
                                     </div>
                 
@@ -238,21 +207,6 @@
                 
                                 </div>
                 
-                                <div class="bottom_block_account">
-                
-                                    <div class="button_account">
-                
-                                        <button class="unban_account" type="submit">
-                                            <img src="../img/admin/unban_account.svg" alt="">                                                                
-                                        </button>
-                
-                                        <button class="dell_account" type="submit">
-                                            <img src="../img/admin/dell_account.svg" alt="">                                                                
-                                        </button>
-
-                                    </div>
-                
-                                </div>
                             </form>
             
                         </div>
