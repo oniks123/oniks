@@ -76,7 +76,7 @@
             <?php 
 
                 if (count($bans) == 0) {
-                    echo ("<p>Отсутствуют заблокированные пользователи</p>");
+                    ?><p class="none_user">Отсутствуют заблокированные пользователи</p><?;
                 }else {
             
                     foreach ($admins as $admin) {

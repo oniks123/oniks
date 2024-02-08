@@ -17,7 +17,7 @@
 
         <div class="head-btn">
 
-            <a href="./index.php"><div class="logo"><p>ONIKS</p></div></a>
+            <a href="./index.php"><div class="logo"><p><?=$settings["name"]?></p></div></a>
 
             <div class="page"><p>МЕНЮ</p></div>
     

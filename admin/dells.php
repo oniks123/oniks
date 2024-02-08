@@ -76,7 +76,7 @@
             <?php 
 
                 if (count($dells) == 0) {
-                    echo ("<p>Отсутствуют заблокированные пользователи</p>");
+                    ?><p class="none_user">Отсутствуют удаленные пользователи</p><?;
                 }else {
             
                     foreach ($admins as $admin) {

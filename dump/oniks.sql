@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 192.168.1.2:3306
--- Время создания: Фев 08 2024 г., 00:16
+-- Время создания: Фев 08 2024 г., 15:42
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.4.30
 
@@ -92,13 +92,6 @@ CREATE TABLE `dell_users` (
   `ban` int NOT NULL,
   `reson` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Дамп данных таблицы `dell_users`
---
-
-INSERT INTO `dell_users` (`id`, `name`, `login`, `pass`, `number`, `email`, `role`, `ban`, `reson`) VALUES
-(30, 'hdfghfdgh', 'hdfghdfghd', 'eb731f30b94758c9da850a13aecb9b2a', '+7 (999) 999-99-90', 'test@test.ru', 'user', 1, 'test');
 
 -- --------------------------------------------------------
 
@@ -248,7 +241,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `name`, `description`, `address`, `number`, `time`, `vk`, `tg`, `yandex`, `supports`) VALUES
-(1, 'ONIKS', 'Ресторан ONIKS - это идеальное место для тех, кто стремится погрузиться в роскошную атмосферу и насладиться непревзойденными блюдами. Здесь время замирает, а каждый визит оставляет незабываемые воспоминания.\r\nОпытные и внимательные официанты ресторана ONIKS радушно встретят гостей, предлагая им комфортное и роскошное обслуживание.', 'Самая ониксовская 12', '+7 (999) 999-99-99', '12:00 - 00:00', 'https://vk.com/oniks.business', 'https://vk.com/oniks.business', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5aec328f0aa78d06ae8c1f7d231c2455612573180d92a8ff02236397de8af419', 'oniks@supports.ru');
+(1, 'ONIKS', 'Ресторан ONIKS - это идеальное место для тех, кто стремится погрузиться в роскошную атмосферу и насладиться непревзойденными блюдами. Здесь время замирает, а каждый визит оставляет незабываемые воспоминания.Опытные и внимательные официанты ресторана ONIKS радушно встретят гостей, предлагая им комфортное и роскошное обслуживание.', 'Ониксовская 12', '+7 (999) 999-99-99', '09:00 - 00:00', 'https://vk.com/oniks.business', 'https://vk.com/oniks.business', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5aec328f0aa78d06ae8c1f7d231c2455612573180d92a8ff02236397de8af419', 'oniks@support.ru');
 
 -- --------------------------------------------------------
 
@@ -281,7 +274,8 @@ INSERT INTO `users` (`id`, `name`, `login`, `pass`, `number`, `email`, `role`, `
 (6, 'Danil', 'unstoppable666', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-93', 'unstoppable666@mail.ru', 'user', 0, ''),
 (7, 'Alina', 'CHOOO', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-92', 'CHOOO@mail.ru', 'user', 0, ''),
 (8, 'Slava', 'Kuzmin', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-91', 's.kuzmin@mail.ru', 'user', 0, ''),
-(10, 'Pochta', 'onikss', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-90', 'test@test.ru', 'admin', 0, '');
+(10, 'Pochta', 'onikss', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-90', 'test@test.ru', 'admin', 0, ''),
+(32, 'Pochta', 'onikss', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-90', 'test@test.ru', 'admin', 0, '');
 
 --
 -- Индексы сохранённых таблиц
@@ -371,7 +365,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
