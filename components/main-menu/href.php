@@ -37,10 +37,6 @@
         </div>
 
         <div>
-            <a href="#">Галерея</a>
-        </div>
-
-        <div>
             <a href="about.php">О нас</a>
         </div>
 

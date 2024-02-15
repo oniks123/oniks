@@ -23,6 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Удаленные пользователи</title>
     <link rel="stylesheet" href="../css/admins/dells.css">
+    <link rel="shortcut icon" href="./img/favicon/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/media/admins-media/dells-media.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../js/modals_processing.js"></script>

@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас</title>
+    <link rel="shortcut icon" href="./img/favicon/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/about.css">
 </head>
 <body>
@@ -102,11 +103,7 @@
                             <div class="feedback-post">
 
                                 <div class="user">
-            
-                                    <div class="photo">
-                                        <img src="./img/profile/Screenshot_3.png" alt="">
-                                    </div>
-            
+                        
                                     <p class="name"><?=$feedback_user["name"]?></p>
             
                                 </div>
@@ -190,19 +187,7 @@
                                 </div>
             
                                 <div class="evaluation">
-            
-                                    <div class="likes">
-                                        <div class="like-btn">
-                                            <img src="./img/feedback/Like.svg" alt="">
-                                        </div>
-                                        <div class="like-count">
-                                            <p><?= $feedback["9"]?></p>
-                                        </div>
-                                        <div class="dislike-btn">
-                                            <img src="./img/feedback/Dislike.svg" alt="">
-                                        </div>
-                                    </div>
-            
+                        
                                     <div class="data"><p><?= $feedback["2"]?></p></div>
             
                                 </div>

@@ -353,6 +353,7 @@ main {
     max-width: 500px;
     text-align: justify;
     font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
 
 .discription-img {

@@ -6,6 +6,7 @@
   <title>404 - Page Not Found</title>
   <link rel="stylesheet" href="../css/404.css">
   <link rel="stylesheet" href="../css/media/404.css">
+  <link rel="shortcut icon" href="./img/favicon/favicon.svg" type="image/x-icon">
 </head>
 <body>
   <div class="container">
