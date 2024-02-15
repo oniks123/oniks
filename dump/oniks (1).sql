@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 192.168.1.2:3306
--- Время создания: Фев 08 2024 г., 15:42
+-- Время создания: Фев 15 2024 г., 18:45
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.4.30
 
@@ -275,7 +275,8 @@ INSERT INTO `users` (`id`, `name`, `login`, `pass`, `number`, `email`, `role`, `
 (7, 'Alina', 'CHOOO', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-92', 'CHOOO@mail.ru', 'user', 0, ''),
 (8, 'Slava', 'Kuzmin', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-91', 's.kuzmin@mail.ru', 'user', 0, ''),
 (10, 'Pochta', 'onikss', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-90', 'test@test.ru', 'admin', 0, ''),
-(32, 'Pochta', 'onikss', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-90', 'test@test.ru', 'admin', 0, '');
+(32, 'Pochta', 'onikss', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-90', 'test@test.ru', 'admin', 0, ''),
+(36, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', '7999999999999', 'oniks@mail.ru', 'user', 0, '');
 
 --
 -- Индексы сохранённых таблиц
@@ -365,7 +366,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

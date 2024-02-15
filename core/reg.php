@@ -10,13 +10,9 @@
       $tmp_number = $_POST["number"];
       $tmp_mail = $_POST["mail"];
 
-      $reg_user = mysqli_query($bd,"INSERT INTO `users` (`id`, `name`, `login`, `pass`, `number`, `email`, `role`) VALUES (NULL, '$tmp_username', '$tmp_login', '$tmp_pass', '$tmp_number', '$tmp_mail', 'user')");
+      $reg_user = mysqli_query($bd,"INSERT INTO `users` (`id`, `name`, `login`, `pass`, `number`, `email`, `role`, `ban`, `reson`) VALUES (NULL, '$tmp_username', '$tmp_login', '$tmp_pass', '$tmp_number', '$tmp_mail', 'user', '0', '')");
       
-      if (!$reg_user) {
-         echo "<script>location.href='../autoriz.php?error=reg';</script>"; 
-
-      }
-         echo "<script>location.href='../index.php';</script>"; 
+      echo "<script>location.href='../index.php';</script>"; 
 
    ?>
 
