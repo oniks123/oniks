@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 192.168.1.2:3306
--- Время создания: Фев 15 2024 г., 18:45
+-- Время создания: Фев 27 2024 г., 12:36
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.4.30
 
@@ -226,7 +226,7 @@ INSERT INTO `menu` (`id`, `Composition`, `img`, `price`, `type`) VALUES
 CREATE TABLE `settings` (
   `id` int NOT NULL,
   `name` varchar(256) NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `description` text CHARACTER SET utf8mb4 NOT NULL,
   `address` varchar(256) NOT NULL,
   `number` varchar(256) NOT NULL,
   `time` varchar(256) NOT NULL,
@@ -234,7 +234,7 @@ CREATE TABLE `settings` (
   `tg` varchar(256) NOT NULL,
   `yandex` text NOT NULL,
   `supports` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Дамп данных таблицы `settings`
@@ -276,7 +276,7 @@ INSERT INTO `users` (`id`, `name`, `login`, `pass`, `number`, `email`, `role`, `
 (8, 'Slava', 'Kuzmin', 'e3153e3b990edd0028d34405ec79d55d', '+7 (999) 999-99-91', 's.kuzmin@mail.ru', 'user', 0, ''),
 (10, 'Pochta', 'onikss', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-90', 'test@test.ru', 'admin', 0, ''),
 (32, 'Pochta', 'onikss', '098f6bcd4621d373cade4e832627b4f6', '+7 (999) 999-99-90', 'test@test.ru', 'admin', 0, ''),
-(36, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', '7999999999999', 'oniks@mail.ru', 'user', 0, '');
+(36, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', '7999999999999', 'oniks@mail.ru', 'admin', 0, '');
 
 --
 -- Индексы сохранённых таблиц
