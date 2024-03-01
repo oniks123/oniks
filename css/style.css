@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,500;1,400&display=swap');
 
 * {
-    padding: 0;
     margin: 0;
-    font-family: 'Caveat', cursive;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 html {
@@ -41,23 +40,27 @@ header {
     width: 100%;
 }
 
+.logo {
+    letter-spacing: 10px;
+}
+
 #number {
-    font-size: 22px;
     text-align: end;
 }
 
-.booking {
-    text-align: center;
+main {
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .booking-btn { 
     border-radius: 30px;
     border: white 4px solid;
-    padding: 20px 50px;
+    padding: 20px 40px;
     transition: all 0.3s ease;
     cursor: pointer;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
     background-color: white;
     color: black;
@@ -68,197 +71,16 @@ header {
     border: rgb(231, 225, 225) 4px solid;
 }
 
-.booking-pop {
-    position: fixed;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0,0,0,.7);
-    z-index: 100;
-    margin: 0 0;
-}
-
-.booking-container {
-    position: absolute;
-    background-color: #daeceb;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 630px;
-    border-radius: 30px;
-    overflow: hidden;
-    outline: none;
-}
-
-.head-booking {
-    background-color: black;
-    color: white;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 25px;
-    padding: 15px 0;
-}
-
-.close-btn {
-    background: none;
-    color: white;
-    outline: none;
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.main-booking {
-    margin-top: 60px;
-}
-
-.main-booking h2 {
-    font-size: 30px;
-}
-
-.up-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.login-pls {
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    margin: 30px 0;
-    font-size: 30px;
-}
-
-.date-bookuing input{
-    width: 200px;
-    height: 50px;
-    font-size: 24px;
-    text-align: center;
-    border: 2px solid black;
-    margin-top: 10px;
-}
-
-.people-container {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    height: 50px;
-}
-
-.people-bookuing span, input{
-    width: 60px;
-    height: 100%;
-    font-size: 30px;
-    border: 2px solid black;
-    text-align: center;
-    outline: none;
-    background: none;
-    text-align: center;
-}
-
-.people-btn {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-
-.info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.name-bookuing input{
-    width: 500px;
-    text-align: start;
-}
-
-.down-container {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;;
-}
-
-.time {
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
-}
-
-.time-container {
-    font-size: 25px;
-    border: 1px solid;
-    padding: 15px;
-    cursor: pointer;
-}
-
-input:checked + .time-container {
-    background-color: #030303;
-    color: white;
-}
-
-.time-box {
-    margin: 15px 0;
-}
-
-.time-btn{
-    display: none;
-    width: 100%;
-}
-
-.comments {
-    margin-top: 15px;
-    width: 70%;
-    text-align: start;
-    border-radius: 5px;
-    padding: 10px;
-    border: 3px solid black;
-    background: none;
-}
-
-.footer-booking {
-    margin: 60px 0 15px 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer-booking button {
-    height: 50px;
-    font-size: 25px;
-    border: 2px solid black;
-    padding: 0 15px;
-    cursor: pointer;
-    border-radius: 30px;
-}
-
-.footer-booking button:hover {
-    background-color: rgb(228, 219, 219);
+.booking a {
+    text-decoration: none;
 }
 
 .date {
-    font-size: 17px;
+    font-size: 14px;
     margin: 5px;
+    text-align: center;
 }
 
-main {
-    max-width: 1500px;
-    margin: 0 auto;
-}
 
 /* Менюшка */
 
@@ -282,7 +104,7 @@ main {
 
 .menu-btn {
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
     text-align: center;
 }
@@ -300,7 +122,7 @@ main {
 }
 
 .menu-main {
-    font-size: 30px;
+    font-size: 22px;
     text-align: center;
 }
 
@@ -329,18 +151,20 @@ main {
 }
 
 .menu-footer .addres{
-    text-align: center;
+    text-align: justify;
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .addres span{
     color: rgb(182, 176, 176);
+    font-size: 12px;
 }
 
 .menu-footer {
     margin-bottom: 20px;
 }
+
 /* Описание рестика */
 
 .discription {
@@ -352,8 +176,8 @@ main {
 .discription-text {
     max-width: 500px;
     text-align: justify;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
+    line-height: 35px;
 }
 
 .discription-img {
@@ -384,7 +208,8 @@ main {
     justify-content: space-around;
     width: 100%;
     margin-top: 50px;
-    font-size: 20px;
+    font-size: 17px;
+    flex-grow: 1;
 }
 
 .card-event {
@@ -418,11 +243,176 @@ main {
     transform: scale(1.1);
 }
 
+/* Столики для бронирования */
+
+.error-auth {
+    text-align: center;
+    font-size: 22px;
+}
+
+#booking h1 {
+    font-size: 23px;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+}
+
+.table-list {
+    margin: 20px 0;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.table-block {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 0px 7px 0px #000000a8;
+    flex-grow: 1;
+}
+
+.table-info {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.table-id {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: baseline;
+}
+
+.table-id h4, span{
+    letter-spacing: 5px;
+}
+
+.table-id h4 {
+    font-size: 26px;
+    color: white;
+    font-weight: 400;
+}
+
+.table-id span {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(207, 207, 207);
+}
+
+.table-person {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.table-person span{
+    margin-left: 7px;
+    font-size: 23px;
+    color: white;
+}
+
+.table-img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-img span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.377);
+}
+
+.table-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-inputs input {
+    border: none;
+    border-bottom: 2px black solid;
+    width: 100%;
+    font-size: 20px;
+    outline: none;
+    margin: 7px 0;
+    padding: 0 7px;
+    box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.form-inputs button {
+    border: none;
+    font-size: 20px;
+    outline: none;
+    margin: 7px 0;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: rgba(128, 128, 128, 0.212);
+    transition: all .2s ease;
+}
+
+.form-inputs button:hover, button:focus {
+    border-radius: 9px;
+    background-color: rgba(128, 128, 128, 0.445);
+}
+
+.form-table {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.form-table input{
+    display: none;
+}
+
+.form-table input:checked + h4{
+    background-color: rgb(0 0 0 / 13%);
+    box-shadow: 0px 0px 3px 0px #00000066;
+}
+
+.form-table label{
+    cursor: pointer;
+}
+
+.form-table label:not(:first-child) {
+    margin: 0 10px;
+}
+
+.form-table h4{
+    border: 2px black solid;
+    padding: 7px 17px;
+    font-size: 13px;
+    transition: background-color .2s ease;
+}
+
 /* Яндекс карта */
 
 .map iframe {
     box-shadow: 0px 0px 11px 0px #000;
+    border-radius: 15px;
 }
+
+/* Footer */
 
 footer {
     max-width: 1500px;
@@ -448,7 +438,7 @@ footer {
 .footer-menu a{
     color: black;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 15px;
     margin: 20px;
     transition: color 0.2s ease;
 }
@@ -464,10 +454,11 @@ footer {
 
 .footer-addres p{
     margin: 0 50px;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: bold;
     display: flex;
     flex-direction: column;
+    line-height: 30px;
 }
 
 .disable {

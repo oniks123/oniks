@@ -14,6 +14,7 @@
     $editors = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'editor' AND `ban` = 1"));
     $admins = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `role` LIKE 'admin' AND `ban` = 1"));
     $bans = mysqli_fetch_all(mysqli_query ($bd, "SELECT * FROM `users` WHERE `ban` = 1"));
+
 ?>
 
 <!DOCTYPE html>

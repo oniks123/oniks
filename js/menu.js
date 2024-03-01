@@ -2,6 +2,7 @@ const open = document.querySelector(".open")
 const MenuConteiner = document.querySelector(".menu-container")
 const MenuClose = document.querySelector(".close")
 const cont = document.querySelector(".cont-btn")
+const body = document.querySelector("body")
 
 MenuClose.addEventListener('click', () => {
     body.classList.remove("block-scroll")

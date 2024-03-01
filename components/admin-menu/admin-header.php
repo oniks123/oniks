@@ -4,5 +4,3 @@
 <a href="users.php">Клиентская база</a>
 <a href="bookings.php">Бронирования</a>
 <a href="bans.php">Блокировки</a>
-<a href="updates.php">Обновления</a>
-<a href="claims.php">Жалобы</a>

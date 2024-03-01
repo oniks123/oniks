@@ -1,0 +1,103 @@
+@media screen and (max-width: 1190px) {
+    body{
+        margin: auto;
+    }
+    
+    header {
+        flex-wrap: wrap;
+    }
+
+    header a {
+        font-size: 13px;
+        margin: 7px 10px;
+    }
+    
+    .booking {
+        display: flex;
+        grid-gap: 25px 60px;
+        width: auto;
+        margin: 45px auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-height: none;
+        padding: 15px 0px;
+    }    
+
+    table {
+        font-size: 13px;
+    }
+
+    .comments::-webkit-scrollbar {
+        height: 3px !important;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    #name {
+        width: 10% !important;                
+    }
+
+    #number{
+        width: 10% !important;           
+    }
+
+    #time {
+        width: 8% !important;            
+    }
+
+    #person{
+        width: 3% !important;            
+    }
+
+    #comments{
+        width: 30% !important;
+    }
+
+    #status{
+        width: 10% !important;             
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .search input{
+        font-size: 11px;
+    }
+    
+    table {
+        font-size: 11px !important;
+    }
+    
+    #comments{
+        width: 15% !important;
+    }
+
+    #status {
+        width: 12% !important;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    table {
+        font-size: 9px !important;
+    }
+
+    #name {
+        width: 4% !important;
+    }
+
+    #time {
+        width: 5% !important;
+    }
+
+    #comments {
+        width: 20% !important;
+    }
+
+    #status {
+        width: 3% !important;
+    }
+
+    #number {
+        display: none;
+    }
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 192.168.1.2:3306
--- Время создания: Фев 27 2024 г., 12:36
+-- Время создания: Мар 01 2024 г., 21:25
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.4.30
 
@@ -29,11 +29,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bookings` (
   `id` int NOT NULL,
+  `name` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `number` varchar(256) COLLATE utf8mb4_general_ci NOT NULL,
   `data` date NOT NULL,
   `person` int NOT NULL,
   `time` time NOT NULL,
   `comments` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `name` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `owner` int NOT NULL,
   `Status` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'Одобрено',
   `Reason` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
@@ -43,14 +44,17 @@ CREATE TABLE `bookings` (
 -- Дамп данных таблицы `bookings`
 --
 
-INSERT INTO `bookings` (`id`, `data`, `person`, `time`, `comments`, `name`, `owner`, `Status`, `Reason`) VALUES
-(2, '2023-09-24', 6, '13:00:00', 'Пицца', 'Kirill Oniks', 1, 'Одобрено', ''),
-(32, '2023-09-24', 6, '13:00:00', 'Пицца', 'Kirill Oniks', 1, 'Отменено', 'Потому что потому'),
-(35, '2023-10-14', 4, '15:00:00', 'Хочу пиццу', 'Kirill', 1, 'Одобрено', ''),
-(36, '2023-10-26', 5, '15:00:00', 'Хочу пиццу', 'Кирилл', 1, 'Отменено', ''),
-(37, '2024-01-27', 4, '12:00:00', 'gsdfgsdfg', 'Admin', 1, 'Одобрено', ''),
-(38, '2024-01-26', 4, '12:00:00', 'gsdfg', 'Admin', 1, 'Одобрено', ''),
-(39, '2024-01-26', 4, '12:00:00', 'gsdfg', 'Admin', 1, 'Одобрено', '');
+INSERT INTO `bookings` (`id`, `name`, `number`, `data`, `person`, `time`, `comments`, `owner`, `Status`, `Reason`) VALUES
+(58, 'Кирилл', '7999999999999', '2024-03-01', 5, '11:11:00', 'ХОЧУ ПИЦЦУ ', 1, 'Одобрено', ''),
+(59, 'Антон', '88888', '2024-03-01', 5, '11:11:00', '    border-bottom: 1px solid black;\n    border-bottom: 1px solid black;\n    border-bottom: 1px solid black;\n    border-bottom: 1px solid black;\n', 1, 'Одобрено', ''),
+(60, 'Дима', '7999999999999', '2024-03-01', 5, '11:11:00', 'Ничего кроме мяса', 1, 'Одобрено', ''),
+(61, 'Свеиа', '7999999999999', '2024-03-01', 5, '11:11:00', '-', 1, 'Одобрено', ''),
+(62, 'Лера', '7999999999999', '2024-03-01', 5, '11:11:00', '-', 1, 'Одобрено', ''),
+(63, 'Кира', '7999999999999', '2024-03-01', 5, '11:11:00', '-', 1, 'Одобрено', ''),
+(64, 'Свят', '7999999999999', '2024-03-01', 5, '11:11:00', '-', 1, 'Одобрено', ''),
+(65, 'Александр ермалаев', '7999999999999', '2024-03-01', 5, '11:11:00', '-', 1, 'Одобрено', ''),
+(66, 'Мой господин', '7999999999999', '2024-03-01', 5, '11:11:00', '-', 1, 'Одобрено', ''),
+(67, 'test', '7999999999999', '2024-03-11', 13, '11:11:00', '111', 1, 'Одобрено', '');
 
 -- --------------------------------------------------------
 
@@ -226,7 +230,7 @@ INSERT INTO `menu` (`id`, `Composition`, `img`, `price`, `type`) VALUES
 CREATE TABLE `settings` (
   `id` int NOT NULL,
   `name` varchar(256) NOT NULL,
-  `description` text CHARACTER SET utf8mb4 NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `address` varchar(256) NOT NULL,
   `number` varchar(256) NOT NULL,
   `time` varchar(256) NOT NULL,
@@ -234,14 +238,38 @@ CREATE TABLE `settings` (
   `tg` varchar(256) NOT NULL,
   `yandex` text NOT NULL,
   `supports` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Дамп данных таблицы `settings`
 --
 
 INSERT INTO `settings` (`id`, `name`, `description`, `address`, `number`, `time`, `vk`, `tg`, `yandex`, `supports`) VALUES
-(1, 'ONIKS', 'Ресторан ONIKS - это идеальное место для тех, кто стремится погрузиться в роскошную атмосферу и насладиться непревзойденными блюдами. Здесь время замирает, а каждый визит оставляет незабываемые воспоминания.Опытные и внимательные официанты ресторана ONIKS радушно встретят гостей, предлагая им комфортное и роскошное обслуживание.', 'Ониксовская 12', '+7 (999) 999-99-99', '09:00 - 00:00', 'https://vk.com/oniks.business', 'https://vk.com/oniks.business', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5aec328f0aa78d06ae8c1f7d231c2455612573180d92a8ff02236397de8af419', 'oniks@support.ru');
+(1, 'ONIKS', 'Ресторан ONIKS - это идеальное место для тех, кто стремится погрузиться в роскошную атмосферу и насладиться непревзойденными блюдами. Здесь время замирает, а каждый визит оставляет незабываемые воспоминания. Опытные и внимательные официанты ресторана ONIKS радушно встретят гостей, предлагая им комфортное и роскошное обслуживание.', 'Ониксовская 12', '+7 (999) 999-99-99', '09:00 - 00:00', 'https://vk.com/oniks.business', 'https://vk.com/oniks.business', 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5aec328f0aa78d06ae8c1f7d231c2455612573180d92a8ff02236397de8af419', 'oniks@support.ru');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `tables`
+--
+
+CREATE TABLE `tables` (
+  `id` int NOT NULL,
+  `status` varchar(256) NOT NULL,
+  `access` int NOT NULL,
+  `persons` int NOT NULL,
+  `img` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `tables`
+--
+
+INSERT INTO `tables` (`id`, `status`, `access`, `persons`, `img`) VALUES
+(1, 'Свободен', 1, 2, '1.jpg'),
+(2, 'Занят', 0, 4, '2.jpg'),
+(3, 'Свободен', 1, 5, '3.jpg'),
+(4, 'Занят', 0, 3, '4.jpg');
 
 -- --------------------------------------------------------
 
@@ -322,6 +350,12 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `tables`
+--
+ALTER TABLE `tables`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
@@ -336,7 +370,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT для таблицы `claim-feedback`
@@ -361,6 +395,12 @@ ALTER TABLE `menu`
 --
 ALTER TABLE `settings`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `tables`
+--
+ALTER TABLE `tables`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

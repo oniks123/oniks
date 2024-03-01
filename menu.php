@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/menu.css">
 </head>
 <body>
+
     <header>
 
         <div class="head-btn">
@@ -29,7 +30,6 @@
         <div class="head-menu">
 
             <a href="./index.php">Главная</a>
-            <a href="#">Галерея</a>
             <a href="about.php">О нас</a>
             
         </div>

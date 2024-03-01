@@ -42,7 +42,7 @@ header a:hover{
 .settings {
     display: flex;
     width: auto;
-    margin: 45px 0;
+    margin-top: 45px;
     font-size: 17px;
     background-color: white;
     border-radius: 20px;
