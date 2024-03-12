@@ -13,6 +13,8 @@
     <title>ONIKS</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./img/favicon/favicon.svg" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <header>
@@ -127,7 +129,7 @@
             
             <?php 
             
-            if ($_SESSION) {
+            if ($_SESSION AND $user_profile["ban"] != 1) {
                 ?><section class="booking-form">
                     <form action="./core/booking.php" method="post">
     
@@ -152,6 +154,9 @@
     
                 </section><?
             }
+            else if ($user_profile["ban"] == 1) {
+                ?><section class="error-auth"><h3>Ваш аккаунт заблокирован. Вы не сможете заказать столик. <a href="#">Подробнее</a></h3></section><?
+            }
             else {
                 ?><section class="error-auth"><h3>Что бы забронировать столик, вы должны <a href="auth/login.php">Авторизоваться</a></h3></section><?
             }
@@ -170,6 +175,42 @@
         <?php require ("./components/footer/footer.php")?>
     </footer>
 
-    <script src="./js/menu.js"></script>    
+    <?php 
+    
+    if ($user_profile["ban"] == 1) {
+        ?>
+            <div class="msg hide">
+                <span>Ваш аккаунт заблокирован по причине: <br> <?=$user_profile["reson"]?></span>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    const msg = document.querySelector(".msg")
+                    msg.classList.remove("hide")
+                    var counter = 5;
+                    var interval = setInterval(function() {
+                        counter--;
+                        if (counter === 0) {
+                            clearInterval(interval);
+                            msg.classList.add("hide")
+                        }
+                    }, 1000);
+                });
+            </script>
+        <?
+    }
+
+    ?>
+
+    <script src="./js/menu.js"></script>
+
+    <script>
+       const booking_btn = document.querySelector(".booking-btn");
+
+       booking_btn.addEventListener("click", () => {
+        body.classList.remove("block-scroll")
+        MenuConteiner.classList.add("hide-menu")
+       })
+    </script>
 </body>
 </html>

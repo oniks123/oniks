@@ -61,20 +61,26 @@
                 </tr>
 
                 <?php 
-                
-                foreach ($booking as $booking) {
-                    ?>
-                <tr id="userList">
-                    <td id="name"><?=$booking[1]?></td>
-                    <td id="number"><?=$booking[2]?></td>
-                    <td id="time"><?=$booking[10]?></td>
-                    <td id="person"><?=$booking[4]?></td>
-                    <td id="comments"><p class="comments"><?=$booking[6]?></p></td>
-                    <td id="status"><?=$booking[8]?></td>
-                    <td>X</td>
-                </tr>
-                    
-                    <?
+
+                if (empty($booking)){
+                    echo ("<tr><td>На сегодня бронирований нет.</td></tr>");
+                }
+                else {
+                            
+                    foreach ($booking as $booking) {
+                        ?>
+                    <tr id="userList">
+                        <td id="name"><?=$booking[1]?></td>
+                        <td id="number"><?=$booking[2]?></td>
+                        <td id="time"><?=$booking[10]?></td>
+                        <td id="person"><?=$booking[4]?></td>
+                        <td id="comments"><p class="comments"><?=$booking[6]?></p></td>
+                        <td id="status"><?=$booking[8]?></td>
+                        <td>X</td>
+                    </tr>
+                        
+                        <?
+                    }
                 }
                 
                 ?>

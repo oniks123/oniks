@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/media/auth-media.css">
 </head>
 <body>
     <section id="register">
-        <div class="reg-container disable">
+        <div class="reg-container">
 
             <header><p>Регистрация</p></header>
     
@@ -35,6 +36,14 @@
                     <div class="email">
                         <input type="email" name="mail" required placeholder="Почта">
                     </div>
+
+                    <?php 
+                    
+                    if ($_GET["error"] == "reg_data") {
+                        echo ("Ошибка регистрационных данных");
+                    }
+                    
+                    ?>
     
                     <button type="submit">Регистрация</button>
     
@@ -44,7 +53,7 @@
     
             <footer>
                 <div class="enter"><a href="login.php">Авторизация</a></div>
-                <div class="forgot-password"><a>Забыли пароль</a></div>
+                <div class="forgot-password"><a>Забыли пароль?</a></div>
             </footer>
     
         </div>

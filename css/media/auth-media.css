@@ -1,0 +1,23 @@
+@media screen and (max-width: 768px) {
+    .login-container {
+        width: 100%;
+    }
+
+    .reg-container {
+        width: 100%;
+    }
+
+    form div {
+        width: 80%;
+    }
+
+    form button {
+        width: 80%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px 0;
+        font-size: 19px;
+    }
+}

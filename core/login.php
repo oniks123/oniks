@@ -1,4 +1,4 @@
-<? 
+<?php 
    require ("bd.php");
 
    $tmp_login = $_POST["login"];
