@@ -49,122 +49,109 @@
     </header>
 
     <main>
-
-        <section class="discription">
-
-            <div class="discription-text">
-
-                <h4><?=$settings["description"]?></h4>
-
-            </div>
-
-            <div class="discription-img"><img src="./img/background/discriprion.png" alt=""></div>
-            
-
-        </section>
-
         <section class="events">
-
-            <h2>АФИША МЕРОПРИЯТИЙ В РЕСТОРАНЕ</h2>
-
-            <div class="events-container">
-
-                <div class="card-event">
-
-                    <img src="./img/events/image 2.png" alt="">
-                    <h3>День рождения</h3>
-
+            <h1 class="section_description">Наши мероприятия</h1>
+            
+            <div class="event-card">
+                <img src="./img/events/1.png" alt="Event Image" class="event-image">
+                <div class="event-info">
+                  <h2 class="event-title">Дни рождения</h2>
+                  <p class="event-description">Отметьте свой день рождения с нами! Наш коллектив сосредоточен на том, чтобы сделать ваш день рождение незабываемым. С вкусной едой, уютной атмосферой и широким ассортиментом напитков, вы и ваши гости проведете отличное время. Хотите спокойного собрания или живой вечеринки с диджеем, мы можем адаптировать мероприятие под ваши потребности. Свяжитесь с нами, чтобы забронировать день рождения!</p>
                 </div>
-
-                <div class="card-event">
-
-                    <img src="./img/events/image 2-1.png" alt="">
-                    <h3>DJ программа</h3>
-
-                </div>
-
-                <div class="card-event">
-
-                    <img src="./img/events/image 2-2.png" alt="">
-                    <h3>Живой звук</h3>
-
-                </div>                
-
             </div>
 
+            <div class="event-card">
+                <img src="./img/events/2.png" alt="Event Image" class="event-image">
+                <div class="event-info">
+                  <h2 class="event-title">DJ программа</h2>
+                  <p class="event-description">Присоединяйтесь к нам к необычному вечеру музыки и танцев с нашей DJ программой. Наши опытные диджеи будут играть самые горячие треки и смешивать ваши любимые мелодии. Любите электронную музыку, хип-хоп или поп, у нас есть что-то для каждого. С нашей современной системой звука и танцплощадкой, которая всегда заполнена, вас ждет незабываемая ночь.</p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="./img/events/3.png" alt="Event Image" class="event-image">
+                <div class="event-info">
+                  <h2 class="event-title">Живой звук</h2>
+                  <p class="event-description">Прочувствуйте мощь живой музыки с нашим замечательным ассортиментом музыкантов и исполнителей. От джаза  до рок-н-ролла, мы демонстрируем широкий спектр жанров и музыкальных стилей. Наши талантливые исполнители полностью сосредоточены на создании уникального и незабываемого опыта для каждой аудитории. Любите классические композиции или начинающих артистов, у нас есть что-то для каждого. Проверьте наш календарь на предстоящие мероприятия живой музыки и забронируйте свои билеты сегодня!
+                </div>
+            </div>
         </section>
 
         <section id="booking">
 
             <?php $tables = mysqli_fetch_all (mysqli_query ($bd, "SELECT * FROM `tables`")); ?>
 
-            <h1>Столики</h1>
+            <h1 class="section_description">Столики</h1>
 
-            <div class="table-list">
+            <div class="booking_block">
+                <div class="table-list">
 
-                <?php 
-                    foreach ($tables as $table) {
-                    ?>
-                    <div class="table-block">
-
-                        <div class="table-info">
-
-                            <div class="table-id"><h4><?=$table["0"]?></h4><span>стол</span></div>
-        
-                            <div class="table-person"><img src="../img/tables/svg/peopls.svg" alt=""> <span><?=$table["3"]?></span></div>
-                        </div>
-
-                        <div class="table-img">
-                            <span></span>
-                            <img src="../img/tables/<?=$table["4"]?>" alt="Столик в ресторане">
-                        </div>
-
-                    </div>  
-                    
-                    <?
-                    }                
-                ?>
-
-            </div>
-            
-            <?php 
-            
-            if ($_SESSION AND $user_profile["ban"] != 1) {
-                ?><section class="booking-form">
-                    <form action="./core/booking.php" method="post">
+                    <?php 
+                        foreach ($tables as $table) {
+                        ?>
+                        <div class="table-block">
     
-                        <div class="form-inputs">
-                            <input type="text" name="name" placeholder="Имя" required>
-                            <input type="number" name="number" placeholder="Номер телефона" required>
-                            <input type="date" name="date" required min="<?= date("Y-m-d", strtotime('+1 days')) ?>" max="<?= date("Y-m-d", strtotime('+15 days')) ?>">
-                            <input type="number" name="person" placeholder="Количество персон" required>                
-                            <input type="time" name="time" placeholder="Время" required> 
-                            <input type="text" name="comments" placeholder="Комментарии к бронированию">
+                            <div class="table-info">
     
-                            <?php 
+                                <div class="table-id"><h4><?=$table["0"]?></h4><span>стол</span></div>
+            
+                                <div class="table-person"><img src="../img/tables/svg/peopls.svg" alt=""> <span><?=$table["3"]?></span></div>
+                            </div>
+    
+                            <div class="table-img">
+                                <span></span>
+                                <img src="../img/tables/<?=$table["4"]?>" alt="Столик в ресторане">
+                            </div>
+    
+                        </div>  
                         
-                                if ($_GET["error"] == "booking") {
-                                    echo ("<h2>Ошибка бронирования столика</h2>");
-                                }
-                            ?>
-                            <button type="submit">Забронировать</button>
-                        </div>
+                        <?
+                        }                
+                    ?>
     
-                    </form>
+                </div>
+                
+                <?php 
+                
+                if ($_SESSION AND $user_profile["ban"] != 1) {
+                    ?><section class="booking-form">
+                        <form action="./core/booking.php" method="post">
+        
+                            <div class="form-inputs">
+                                <input type="text" name="name" placeholder="Имя" required>
+                                <input type="number" name="number" placeholder="Номер телефона" required>
+                                <input type="date" name="date" required min="<?= date("Y-m-d", strtotime('+1 days')) ?>" max="<?= date("Y-m-d", strtotime('+15 days')) ?>">
+                                <input type="number" name="person" placeholder="Количество персон" required>                
+                                <input type="time" name="time" placeholder="Время" required> 
+                                <input type="text" name="comments" placeholder="Комментарии к бронированию">
+        
+                                <?php 
+                            
+                                    if ($_GET["error"] == "booking") {
+                                        echo ("<h2>Ошибка бронирования столика</h2>");
+                                    }
+                                ?>
+                                <button type="submit">Забронировать</button>
+                            </div>
+        
+                        </form>
+        
+                    </section><?
+                }
+                else if ($user_profile["ban"] == 1) {
+                    ?><section class="error-auth"><h3>Ваш аккаунт заблокирован. Вы не сможете заказать столик. <a href="#">Подробнее</a></h3></section><?
+                }
+                else {
+                    ?><section class="error-auth"><h3>Что бы забронировать столик, вы должны <a href="auth/login.php">Авторизоваться</a></h3></section><?
+                }
     
-                </section><?
-            }
-            else if ($user_profile["ban"] == 1) {
-                ?><section class="error-auth"><h3>Ваш аккаунт заблокирован. Вы не сможете заказать столик. <a href="#">Подробнее</a></h3></section><?
-            }
-            else {
-                ?><section class="error-auth"><h3>Что бы забронировать столик, вы должны <a href="auth/login.php">Авторизоваться</a></h3></section><?
-            }
-
-            ?>
+                ?>
+            </div>
         </section>
 
         <section class="map">
+            <h1 class="section_description">Как до нас добраться?</h1>
+
             <script type="text/javascript" charset="utf-8" async src="<?=$settings["yandex"]?>&amp;
             width=100%25&amp;height=470&amp;lang=ru_RU&amp;scroll=false"></script>
         </section>

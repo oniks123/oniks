@@ -23,7 +23,7 @@ header {
 .head-btn {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 30px;
     font-weight: bold;
 }
@@ -77,30 +77,25 @@ main {
 
 .add-menu {
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: 10px;
+    bottom: 10px;
     width: 40px;
     height: 40px;
-    border-radius: 506px;
+    border-radius: 100%;
     border: rgb(0, 0, 0) 3px solid;
     transition: all 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     z-index: 1001;
+    text-align: center;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: none;
+    background-color: white;
 }
 
 .add-menu:hover {
     transform: scale(1.2);
-}
-
-.add-menu::before {
-    content: "+";
-    position: absolute;
-    font-size: 35px;
-    top: -4px;
-    left: 11px;
 }
 
 .admin-panel {
@@ -160,7 +155,7 @@ main {
 
 footer {
     max-width: 1500px;
-    margin: 35px auto 30px;
+    margin: 35px auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

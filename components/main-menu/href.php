@@ -34,7 +34,7 @@
     <a href="index.php">Главная</a>
 </div>
 <div>
-    <a href="menu.php">Меню</a>
+    <a href="./menu/menu.php?category=breakfast">Меню</a>
 </div>
 <div>
     <a href="about.php">О нас</a>

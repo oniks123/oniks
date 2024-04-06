@@ -364,7 +364,7 @@ header {
 /* Подвал */
 footer {
     max-width: 1500px;
-    margin: 70px auto 30px;
+    margin: 70px auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

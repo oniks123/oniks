@@ -27,20 +27,15 @@
     <title>Меню</title>
     <link rel="shortcut icon" href="./img/favicon/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/allmenu.css">
+    <link rel="stylesheet" href="../css/media/allmenu-media.css">
 </head>
 <body>
 
 <?session_start();?>
 
-    <header>
-
-        <?php require ("../components/header-menu/header.php") ?>
-
-    </header>
+    <header><?php require ("../components/header-menu/header.php")?></header>
 
     <main>
-
-
 
         <div class="list-menu">
 
@@ -56,14 +51,11 @@
                     if ($user_profile["role"] == "admin") {
                         ?>
                         
-                            <a href="add-menu.php" title="Добавить блюдо">
-                                <span class="add-menu"></span>
-                            </a>
+                            <a class="add-menu" href="add-menu.php" title="Добавить блюдо">+</a>
                         
                         <?
                     }
                 }
-
 
                 // категория которая рендерится              
                 switch ($_GET["category"]) {
@@ -674,12 +666,8 @@
 
         </div>     
         
-
-
     </main>
 
-    <footer>
-        <?php require ("../components/footer/footer.php")?>
-    </footer>
+    <footer><?php require ("../components/footer/footer.php")?></footer>
 </body>
 </html>

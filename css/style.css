@@ -18,6 +18,12 @@ section {
     margin: 70px 0;
 }
 
+.section_description {
+    font-size: 23px;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+}
+
 .msg {
     visibility: visible;
     position: fixed;
@@ -103,7 +109,6 @@ main {
     text-align: center;
 }
 
-
 /* Менюшка */
 
 .menu-container {
@@ -171,82 +176,51 @@ main {
 .menu-footer {
     margin-bottom: 20px;
 }
-/* Описание рестика */
-
-.discription {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.discription-text {
-    max-width: 500px;
-    text-align: justify;
-    font-size: 17px;
-    line-height: 35px;
-}
-
-.discription-img {
-    width: 500px;
-    transition: transform 0.5s ease;
-}
-
-.discription-img img {
-    width: 100%;
-    object-fit: cover;
-}
-
-.discription-img:hover{
-    transform: scale(1.1);
-}
 
 /* Афиша */
 
-.events {
+.event-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-}
-
-.events-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    margin-top: 50px;
-    font-size: 17px;
-    flex-grow: 1;
-}
-
-.card-event {
-    width: 230px;
-    height: 500px;
-    color: white;
-    position: relative;
-    border-radius: 30px;
-    transition: transform 0.3s ease;
-    background-color: black;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.123);
+    margin-bottom: 20px;
     overflow: hidden;
+    padding: 10px;
+    border-radius: 15px;
+} 
+
+.event-card:nth-child(3n) {
+    flex-direction: row-reverse;
 }
 
-.card-event h3 {
-    position: absolute;
-    bottom: 30px;
-    left: 50px;
-}
-
-.card-event img{
-    width: 100%;
-    height: 500px;
+.event-image {
+    width: 400px;
+    height: 400px;
     object-fit: cover;
-    border-radius: 30px;
-    box-shadow: 0px 0px 11px 0px #000;
-    opacity: 0.8;
-    transition: transform 0.3s ease;
+    border-radius: 15px;
 }
 
-.card-event:hover img{
-    transform: scale(1.1);
+.event-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.event-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.event-description {
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: justify;
+    color: #666;
 }
 
 /* Столики для бронирования */
@@ -262,8 +236,12 @@ main {
     letter-spacing: 5px;
 }
 
+.booking_block {
+    display: flex;
+    align-items: center;
+}
+
 .table-list {
-    margin: 20px 0;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -347,13 +325,18 @@ main {
     object-fit: cover;
 }
 
+.form-inputs {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .form-inputs input {
     border: none;
     border-bottom: 2px black solid;
     width: 100%;
-    font-size: 20px;
+    font-size: 21px;
     outline: none;
-    margin: 7px 0;
+    margin: 22px 0;
     padding: 0 7px;
     box-sizing: border-box;
 }
@@ -372,43 +355,12 @@ input::-webkit-inner-spin-button {
     box-sizing: border-box;
     cursor: pointer;
     border-radius: 7px;
-    background-color: rgba(128, 128, 128, 0.212);
-    transition: all .2s ease;
+    width: 100%;
+    transition: .2s linear;
 }
 
-.form-inputs button:hover, button:focus {
-    border-radius: 9px;
-    background-color: rgba(128, 128, 128, 0.445);
-}
-
-.form-table {
-    display: flex;
-    align-items: center;
-    margin: 12px 0;
-}
-
-.form-table input{
-    display: none;
-}
-
-.form-table input:checked + h4{
-    background-color: rgb(0 0 0 / 13%);
-    box-shadow: 0px 0px 3px 0px #00000066;
-}
-
-.form-table label{
-    cursor: pointer;
-}
-
-.form-table label:not(:first-child) {
-    margin: 0 10px;
-}
-
-.form-table h4{
-    border: 2px black solid;
-    padding: 7px 17px;
-    font-size: 13px;
-    transition: background-color .2s ease;
+.form-inputs button:hover {
+    
 }
 
 /* Яндекс карта */
@@ -422,7 +374,7 @@ input::-webkit-inner-spin-button {
 
 footer {
     max-width: 1500px;
-    margin: 0 auto 30px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -432,6 +384,10 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.logo_footer {
+    font-size: 16px;
 }
 
 .footer-menu {

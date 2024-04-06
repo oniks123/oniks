@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+    .head-btn, .addres, .head-menu {
+        font-size: 20px;
+    }
+
+    .name-type {
+        font-size: 25px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .footer-addres p {
+        font-size: 20px;
+    }
+}
