@@ -1,0 +1,79 @@
+.menu-container {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: black;
+    width: 300px;
+    height: 100%;
+    transition: all 0.3s ease;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hide-menu {left: -100%;}
+
+.menu-btn {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu-head {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    font-size: 22px;
+}
+
+.menu-main {
+    font-size: 22px;
+    text-align: center;
+}
+
+.menu-main div {
+    margin: 10px 0;
+}
+
+.menu-main a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-main a:hover {
+    color: rgb(182, 176, 176);
+}
+
+.social-network {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-network a{
+    margin: 10px;
+}
+
+.menu-footer .addres{
+    text-align: justify;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.addres span{
+    color: rgb(182, 176, 176);
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+.menu-footer {
+    margin-bottom: 20px;
+}

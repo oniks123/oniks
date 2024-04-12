@@ -11,7 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас</title>
     <link rel="shortcut icon" href="./img/favicon/favicon.svg" type="image/x-icon">
+    
     <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/components/navbar.css">
+    <link rel="stylesheet" href="./css/components/footer.css">
 </head>
 <body>
 
@@ -32,7 +35,7 @@
 
                 <div class="logo"><h2><?=$settings["name"]?></h2></div>
     
-                <div class="addres"><h2><?=$settings["address"]?></h2> <br> <h2 id="number"><?=$settings["number"]?></h2></div>
+                <div class="addres"><h3><?=$settings["address"]?></h3> <br> <h3 id="number"><?=$settings["number"]?></h3></div>
     
             </div>
 
@@ -87,16 +90,8 @@
 
     </main>
 
-    <footer>
-    <?php require ("./components/footer/footer.php") ?>
-    </footer>
+    <footer><?php require ("./components/footer/footer.php") ?></footer>
 
-    <script src="./js/menu.js"></script>
-    <script src="./js/feedback.js"></script>
-    <script>
-        const body = document.querySelector("body")
-    </script>
-
-    
+    <script src="./js/menu.js"></script>    
 </body>
 </html>

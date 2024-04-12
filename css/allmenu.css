@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,500;1,400&display=swap');
 
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Caveat', cursive;
+    font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -24,13 +24,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: bold;
 }
 
 .head-menu {
     margin-top: 60px;
-    font-size: 25px;
+    font-size: 17px;
     font-weight: bold;
     display: flex;
     grid-gap: 10px;
@@ -41,7 +41,7 @@ header {
 
 .addres {
     text-align: end;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .addres p:first-child{
@@ -86,11 +86,10 @@ main {
     transition: all 0.2s ease;
     z-index: 1001;
     text-align: center;
-    font-size: 35px;
+    font-size: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: none;
     background-color: white;
 }
 
@@ -139,7 +138,7 @@ main {
 
 .name-type{
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     margin: 0 auto;
     text-align: center;
     padding: 15px;
@@ -147,68 +146,8 @@ main {
 
 .price{ 
     color: white;
-    font-size: 23px;
+    font-size: 13px;
     margin: 0 auto;
     text-align: center;
     padding: 15px;
-}
-
-footer {
-    max-width: 1500px;
-    margin: 35px auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.social-network {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-network svg{
-    margin: 10px;
-}
-
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-}
-
-.footer-menu a{
-    color: black;
-    text-decoration: none;
-    font-size: 30px;
-    margin: 20px;
-    transition: color 0.2s ease;
-    font-weight: 600;
-}
-
-.footer-menu a:hover{
-    color: rgb(192, 187, 187);
-}
-
-.footer-addres {
-    display: flex;
-    grid-gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.footer-addres p{
-    margin: 0 50px;
-    font-size: 22px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
 }

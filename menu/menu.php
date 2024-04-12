@@ -26,7 +26,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Меню</title>
     <link rel="shortcut icon" href="./img/favicon/favicon.svg" type="image/x-icon">
+
     <link rel="stylesheet" href="../css/allmenu.css">
+    <link rel="stylesheet" href="../css/components/footer.css">
     <link rel="stylesheet" href="../css/media/allmenu-media.css">
 </head>
 <body>

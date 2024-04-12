@@ -109,74 +109,6 @@ main {
     text-align: center;
 }
 
-/* Менюшка */
-
-.menu-container {
-    top: 0;
-    left: 0;
-    position: absolute;
-    background-color: black;
-    width: 300px;
-    height: 100%;
-    transition: all 0.3s ease;
-    padding: 0px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.hide-menu {left: -100%;}
-.menu-btn {
-    color: white;
-    font-size: 25px;
-    cursor: pointer;
-    text-align: center;
-}
-.menu-head {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-.close {
-    position: absolute;
-    right: 15px;
-    font-size: 22px;
-}
-.menu-main {
-    font-size: 22px;
-    text-align: center;
-}
-.menu-main div {
-    margin: 10px 0;
-}
-.menu-main a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.menu-main a:hover {
-    color: rgb(182, 176, 176);
-}
-.social-network {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.social-network a{
-    margin: 10px;
-}
-.menu-footer .addres{
-    text-align: justify;
-    margin-top: 10px;
-    font-size: 13px;
-}
-.addres span{
-    color: rgb(182, 176, 176);
-    font-size: 12px;
-}
-.menu-footer {
-    margin-bottom: 20px;
-}
-
 /* Афиша */
 
 .event-card {
@@ -273,7 +205,7 @@ main {
     align-items: baseline;
 }
 
-.table-id h4, span{
+.table-id h4, .table-id span{
     letter-spacing: 5px;
 }
 
@@ -369,61 +301,3 @@ input::-webkit-inner-spin-button {
     box-shadow: 0px 0px 11px 0px #000;
     border-radius: 15px;
 }
-
-/* Footer */
-
-footer {
-    max-width: 1500px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo_footer {
-    font-size: 16px;
-}
-
-.footer-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.footer-menu a{
-    color: black;
-    text-decoration: none;
-    font-size: 15px;
-    margin: 20px;
-    transition: color 0.2s ease;
-}
-
-.footer-menu a:hover{
-    color: rgb(192, 187, 187);
-}
-
-.footer-addres {
-    display: flex;
-    align-items: center;
-}
-
-.footer-addres p{
-    margin: 0 50px;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    line-height: 30px;
-}
-
-.disable {
-    display: none;
-}
-
