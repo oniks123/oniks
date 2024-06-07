@@ -26,7 +26,7 @@
 
         <form action="../core/add-menu.php" method="post" enctype="multipart/form-data">
 
-            <span class="exit"><a href="../menu.php">&#10006;</a></span>
+            <span class="exit"><a href="./menu.php?category=breakfast">&#10006;</a></span>
 
             <input type="text" require name="Composition" title="описание" value="" placeholder="Описание" >
 

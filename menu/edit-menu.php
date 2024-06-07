@@ -34,7 +34,7 @@
 
                 <input type="hidden" name="type" value="<? echo $_GET["type"]?>">
     
-                <span class="exit"><a href="../menu/<?echo $_GET["type"] .".php"?>" title="Отмена">&#10006;</a></span>
+                <span class="exit"><a href="./menu.php?category=<?echo $_GET["type"]?>" title="Отмена">&#10006;</a></span>
     
                 <input type="text" name="Composition" title="Новое описание" value="<? echo $item["Composition"]?>">
     

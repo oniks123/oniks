@@ -66,6 +66,7 @@ header {
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    margin: 25px 0;
 }
 
 .logo {
@@ -289,10 +290,6 @@ input::-webkit-inner-spin-button {
     border-radius: 7px;
     width: 100%;
     transition: .2s linear;
-}
-
-.form-inputs button:hover {
-    
 }
 
 /* Яндекс карта */

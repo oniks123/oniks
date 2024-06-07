@@ -28,13 +28,13 @@
 
             <div class="head">
 
-                <section class="menu">
+                <div class="menu">
 
-                    <div class="menu-btn open">&#9776;</div>
+                    <div class="menu-btn open">&#9776; </div>
         
                     <?php require ("./components/main-menu/menu.php") ?>
         
-                </section>
+                </div>
 
                 <div class="logo"><h2><?=$settings["name"]?></h2></div>
     
